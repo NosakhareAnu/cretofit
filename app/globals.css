@@ -1,26 +1,90 @@
 @import "tailwindcss";
 
+@theme {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+
+  --shadow-soft: 0 1px 2px rgba(43, 43, 43, 0.04),
+    0 10px 30px -14px rgba(43, 43, 43, 0.12);
+  --shadow-card: 0 2px 4px rgba(43, 43, 43, 0.05),
+    0 18px 42px -18px rgba(43, 43, 43, 0.2);
+  --shadow-pop: 0 10px 26px -10px rgba(197, 106, 27, 0.32);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f7f4f0;
+  --foreground: #2b2b2b;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Premium entrance animation — used for above-the-fold content */
+@keyframes cf-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: cf-fade-up 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-fade-up-delayed {
+  animation: cf-fade-up 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
+}
+
+/* Warm shimmer for loading skeletons */
+@keyframes cf-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.cf-skeleton {
+  background: linear-gradient(100deg, #efe7dd 30%, #f7f1ea 50%, #efe7dd 70%);
+  background-size: 200% 100%;
+  animation: cf-shimmer 1.4s ease-in-out infinite;
+}
+
+/* Reusable premium placeholder surface (intentional, not an empty gray box) */
+.cf-placeholder {
+  background-image: radial-gradient(
+      circle at 20% 20%,
+      rgba(197, 106, 27, 0.08),
+      transparent 45%
+    ),
+    linear-gradient(135deg, #f2e6da 0%, #ecdcca 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
