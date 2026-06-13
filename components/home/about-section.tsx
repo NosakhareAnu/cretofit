@@ -10,10 +10,10 @@ const highlights = [
 export default function AboutSection() {
   return (
     <section className="bg-[#F2E6DA]/40">
-      <div className="mx-auto max-w-7xl px-6 py-20">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
+      <div className="mx-auto max-w-7xl px-6 py-16 lg:py-20">
+        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
           {/* Left - Image */}
-          <div className="relative h-110 overflow-hidden rounded-[2.5rem] border border-[#E5DED6] shadow-card">
+          <div className="relative h-80 overflow-hidden rounded-[2.5rem] border border-[#E5DED6] shadow-card sm:h-96 lg:h-110">
             <Image
               src="/images/home/home-about.jpg.png"
               alt="Cretofit interior design studio and showroom"

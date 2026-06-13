@@ -4,13 +4,13 @@ import { ArrowRight } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-16 lg:min-h-[82vh] lg:grid-cols-2 lg:py-20">
+    <section className="mx-auto grid max-w-7xl items-center gap-10 px-6 py-12 sm:py-16 lg:min-h-[82vh] lg:grid-cols-2 lg:py-20">
       <div className="animate-fade-up">
-        <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#E5DED6] bg-white/60 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.22em] text-[#C56A1B]">
+        <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#E5DED6] bg-white/60 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#C56A1B] sm:text-xs sm:tracking-[0.22em]">
           Interior Design & Decor
         </p>
 
-        <h1 className="font-display max-w-xl text-[2.6rem] font-semibold leading-[1.08] tracking-tight text-[#2B2B2B] md:text-6xl">
+        <h1 className="font-display max-w-xl text-[2rem] font-semibold leading-[1.1] tracking-tight text-[#2B2B2B] sm:text-[2.6rem] sm:leading-[1.08] md:text-6xl">
           Transform your space with timeless interior solutions.
         </h1>
 
@@ -36,19 +36,19 @@ export default function HeroSection() {
           </Link>
         </div>
 
-        <div className="mt-12 flex max-w-md items-center gap-8 border-t border-[#E5DED6] pt-7">
+        <div className="mt-10 flex max-w-md items-center gap-5 border-t border-[#E5DED6] pt-7 sm:gap-8">
           <div>
-            <p className="font-display text-2xl font-semibold text-[#2B2B2B]">100+</p>
+            <p className="font-display text-xl font-semibold text-[#2B2B2B] sm:text-2xl">100+</p>
             <p className="mt-1 text-xs text-[#6F6A65]">Spaces designed</p>
           </div>
           <div className="h-10 w-px bg-[#E5DED6]" />
           <div>
-            <p className="font-display text-2xl font-semibold text-[#2B2B2B]">Premium</p>
+            <p className="font-display text-xl font-semibold text-[#2B2B2B] sm:text-2xl">Premium</p>
             <p className="mt-1 text-xs text-[#6F6A65]">Curated pieces</p>
           </div>
           <div className="h-10 w-px bg-[#E5DED6]" />
           <div>
-            <p className="font-display text-2xl font-semibold text-[#2B2B2B]">Warm</p>
+            <p className="font-display text-xl font-semibold text-[#2B2B2B] sm:text-2xl">Warm</p>
             <p className="mt-1 text-xs text-[#6F6A65]">Tailored service</p>
           </div>
         </div>

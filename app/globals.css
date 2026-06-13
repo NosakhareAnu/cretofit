@@ -18,6 +18,17 @@
 
 html {
   scroll-behavior: smooth;
+  max-width: 100%;
+  /* Prevent iOS/Android from inflating font sizes in landscape */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  /* Hide scrollbar visually while keeping scroll functional */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE / Edge */
+}
+
+html::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
 body {
@@ -26,10 +37,22 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  max-width: 100%;
+  /* Guard against accidental horizontal overflow on mobile.
+     `clip` (not `hidden`) does NOT create a scroll container, so the
+     sticky navbars keep working. */
+  overflow-x: clip;
 }
 
 * {
   box-sizing: border-box;
+}
+
+/* Media should never force the viewport wider than the screen */
+img,
+svg,
+video {
+  max-width: 100%;
 }
 
 /* Premium entrance animation — used for above-the-fold content */

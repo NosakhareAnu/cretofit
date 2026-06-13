@@ -27,8 +27,8 @@ const portfolioImages = [
 
 export default function PortfolioSection() {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-20">
-      <div className="mb-14 max-w-2xl">
+    <section className="mx-auto max-w-7xl px-6 py-16 lg:py-20">
+      <div className="mb-10 max-w-2xl lg:mb-14">
         <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-[#C56A1B]">
           Portfolio
         </p>
